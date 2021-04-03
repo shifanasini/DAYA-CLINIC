@@ -1,0 +1,88 @@
+{% extends  'adm_index.html' %}
+{% block body %}<br><br>
+<h1 align="center">EMPLOYEE UPDATION</h1><br><br>
+<form action="/myapp/adm_employee_updation/" method="post" enctype="multipart/form-data">
+
+{% csrf_token %}
+<input type="hidden" NAME="id" value="{{ data.id }}" >
+<table class="table table-bordered" style="width:400px"
+align="center" >
+  <tr>
+    <td>Name</td>
+    <td><input name="txt_name" type="text" value="{{ data.emp_name }}" class="form-control" required /></td>
+  </tr>
+  <tr>
+    <td>Age</td>
+    <td><input name="txt_age" type="number" value="{{ data.age }}" class="form-control" required /></td>
+  </tr>
+  <tr>
+    <td>Date Of Birth</td>
+    <td><input name="txt_dob" type="date" value="{{ data.dob }}" class="form-control"  required/></td>
+  </tr>
+  <tr>
+      <td>Type</td>
+        <td><select name="selecttype" class="form-control" required >
+        <option>Doctor</option>
+        <option>Pharmacist</option>
+    </select></td>
+  </tr>
+  <tr>
+    <td>Gender</td>
+    <td><input name="radio_gender" type="radio" value="Female" checked />Female
+      Male<input name="radio_gender" type="radio" value="Male" /></td>
+  </tr>
+  <tr>
+    <td>Place</td>
+    <td><input name="txt_place" type="text" value="{{ data.place }}" class="form-control" required /></td>
+  </tr>
+  <tr>
+    <td>House Name </td>
+    <td><input name="txt_hname" type="text"{{ data.housename }} class="form-control" required/></td>
+
+  </tr>
+  <tr>
+    <td>District </td>
+    <td><input name="txt_district" type="text" value="{{ data.district }}" class="form-control" required /></td>
+
+  </tr>
+  <tr>
+    <td>Pincode</td>
+    <td><input name="txt_pincode" type="number" value="{{ data.pincode }}" class="form-control" required/></td>
+
+  </tr>
+    <tr>
+    <td>State</td>
+    <td><input name="txt_state" type="text" value="{{ data.state }}" class="form-control" required/></td>
+  </tr>
+  <tr>
+    <td>Email Id</td>
+    <td><input name="txt_email" type="email"value="{{ data.emial_Id  }}" class="form-control" required /></td>
+  </tr>
+  <tr>
+    <td>Phone Number</td>
+    <td><input name="txt_phno" type="number" value="{{ data.phone_number }}"  class="form-control" required/></td>
+  </tr>
+     <tr>
+    <td>Qualification</td>
+    <td><input name="txt_qualification" type="text"  class="form-control" required /></td>
+  </tr>
+  <tr>
+    <td>Photo</td>
+    <td><input name="fileField" type="file" required /></td>
+  </tr>
+    <tr><td></td>
+        <td>
+            <input type="submit" value="ADD" class="btn btn-success" align="center"/>
+        </td>
+    </tr>
+</table>
+
+</form>
+    <style>
+    .form-control{
+        background-color: #ffffff;
+        color: #000;
+    }
+    </style>
+
+{% endblock %}
